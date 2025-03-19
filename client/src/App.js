@@ -5,7 +5,6 @@ import { CartProvider } from './context/CartContext'
 import PrivateRoute from './components/routes/PrivateRoute'
 import AdminRoute from './components/routes/AdminRoute'
 
-// Pages
 import HomePage from './pages/HomePage'
 import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
@@ -18,7 +17,6 @@ import AdminDashboardPage from './pages/AdminDashboardPage'
 import ProductFormPage from './pages/ProductFormPage'
 import OrdersManagementPage from './pages/OrdersManagementPage'
 
-// Components
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 
@@ -37,7 +35,6 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
 
-                {/* Protected Routes */}
                 <Route
                   path="/checkout"
                   element={
@@ -63,7 +60,6 @@ function App() {
                   }
                 />
 
-                {/* Admin Routes */}
                 <Route
                   path="/admin"
                   element={
