@@ -16,7 +16,6 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    // Form validation
     if (!name || !email || !password || !confirmPassword) {
       setError('Please fill in all fields')
       return
