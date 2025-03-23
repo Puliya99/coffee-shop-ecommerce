@@ -9,285 +9,285 @@
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .section {
     @apply py-12;
   }
-  
+
   /* Typography */
   h1 {
     @apply text-3xl font-bold text-gray-900 sm:text-4xl;
   }
-  
+
   h2 {
     @apply text-2xl font-bold text-gray-900;
   }
-  
+
   h3 {
     @apply text-xl font-bold text-gray-900;
   }
-  
+
   /* Buttons */
   .btn {
     @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500;
   }
-  
+
   .btn-secondary {
     @apply inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500;
   }
-  
+
   /* Cards */
   .card {
     @apply bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200;
   }
-  
+
   .card-header {
     @apply px-4 py-5 sm:px-6 bg-gray-50;
   }
-  
+
   .card-body {
     @apply px-4 py-5 sm:p-6;
   }
-  
+
   .card-footer {
     @apply px-4 py-4 sm:px-6 bg-gray-50;
   }
-  
+
   /* Forms */
   .form-group {
     @apply mb-4;
   }
-  
+
   .form-label {
     @apply block text-sm font-medium text-gray-700 mb-1;
   }
-  
+
   .form-input {
     @apply mt-1 focus:ring-amber-500 focus:border-amber-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md;
   }
-  
+
   .form-select {
     @apply mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm;
   }
-  
+
   /* Navbar */
   .navbar {
     @apply bg-white shadow-md;
   }
-  
+
   .navbar-container {
     @apply max-w-7xl mx-auto px-2 sm:px-6 lg:px-8;
   }
-  
+
   .navbar-content {
     @apply relative flex items-center justify-between h-16;
   }
-  
+
   .navbar-logo {
     @apply text-xl font-bold text-amber-700;
   }
-  
+
   .navbar-menu {
     @apply hidden sm:ml-6 sm:flex sm:space-x-8;
   }
-  
+
   .navbar-link {
     @apply text-gray-500 hover:text-amber-700 px-3 py-2 text-sm font-medium;
   }
-  
+
   .navbar-link-active {
     @apply text-amber-700 border-b-2 border-amber-700 px-3 py-2 text-sm font-medium;
   }
-  
+
   .navbar-mobile {
     @apply sm:hidden fixed inset-0 bg-white z-50 pt-16 px-4;
   }
-  
+
   .navbar-mobile-link {
     @apply block py-2 text-base font-medium text-gray-500 hover:text-amber-700 border-b border-gray-100;
   }
-  
+
   /* Mobile menu button */
   .menu-button {
     @apply inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-amber-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-500 sm:hidden;
   }
-  
+
   /* Footer */
   .footer {
     @apply bg-gray-800 text-white;
   }
-  
+
   .footer-container {
     @apply max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8;
   }
-  
+
   .footer-grid {
     @apply grid grid-cols-1 md:grid-cols-4 gap-8;
   }
-  
+
   .footer-heading {
     @apply text-lg font-semibold text-white mb-4;
   }
-  
+
   .footer-copyright {
     @apply mt-8 border-t border-gray-700 pt-8 text-center text-sm text-gray-400;
   }
-  
+
   /* Product Grid */
   .product-grid {
     @apply grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8;
   }
-  
+
   .product-card {
-    @apply group relative bg-white rounded-lg shadow overflow-hidden;
+    @apply relative bg-white rounded-lg shadow overflow-hidden;
   }
-  
+
   .product-image {
     @apply w-full h-48 object-cover object-center;
   }
-  
+
   .product-details {
     @apply p-4;
   }
-  
+
   .product-title {
     @apply text-sm font-medium text-gray-900;
   }
-  
+
   .product-price {
     @apply mt-1 text-lg font-medium text-gray-900;
   }
-  
+
   /* Cart */
   .cart-item {
     @apply py-6 flex items-center;
   }
-  
+
   .cart-item-image {
     @apply h-20 w-20 flex-shrink-0 rounded-md object-cover object-center;
   }
-  
+
   .cart-item-details {
     @apply ml-4 flex-1 flex flex-col;
   }
-  
+
   .cart-summary {
     @apply rounded-lg bg-gray-50 px-4 py-6;
   }
-  
+
   /* Hero Section */
   .hero {
     @apply relative bg-gray-900 overflow-hidden;
   }
-  
+
   .hero-content {
     @apply relative z-10 max-w-7xl mx-auto pt-16 pb-24 px-4 sm:pt-24 sm:pb-32 sm:px-6 lg:px-8;
   }
-  
+
   .hero-heading {
     @apply text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl;
   }
-  
+
   .hero-text {
     @apply mt-6 text-xl text-gray-300 max-w-3xl;
   }
-  
+
   .hero-button {
     @apply mt-8 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-black bg-amber-500 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500;
   }
-  
+
   .hero-overlay {
     @apply absolute inset-0 bg-gray-900 bg-opacity-70;
   }
-  
+
   /* Dashboard Section */
   .dashboard-stats {
     @apply grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4;
   }
-  
+
   .dashboard-stat-card {
     @apply bg-white overflow-hidden shadow rounded-lg;
   }
-  
+
   .dashboard-stat-content {
     @apply px-4 py-5 sm:p-6;
   }
-  
+
   .dashboard-stat-title {
     @apply text-sm font-medium text-gray-500 truncate;
   }
-  
+
   .dashboard-stat-value {
     @apply mt-1 text-3xl font-semibold text-gray-900;
   }
-  
+
   /* Table Styles */
   .table-container {
     @apply shadow overflow-hidden border-b border-gray-200 sm:rounded-lg;
   }
-  
+
   .table {
     @apply min-w-full divide-y divide-gray-200;
   }
-  
+
   .table-head {
     @apply bg-gray-50;
   }
-  
+
   .table-header-cell {
     @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
   }
-  
+
   .table-body {
     @apply bg-white divide-y divide-gray-200;
   }
-  
+
   .table-body-row {
     @apply hover:bg-gray-50;
   }
-  
+
   .table-body-cell {
     @apply px-6 py-4 whitespace-nowrap text-sm text-gray-500;
   }
-  
+
   /* Status Badges */
   .badge {
     @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
   }
-  
+
   .badge-success {
     @apply bg-green-100 text-green-800;
   }
-  
+
   .badge-warning {
     @apply bg-yellow-100 text-yellow-800;
   }
-  
+
   .badge-error {
     @apply bg-red-100 text-red-800;
   }
-  
+
   .badge-info {
     @apply bg-blue-100 text-blue-800;
   }
-  
+
   /* Alert components */
   .alert {
     @apply rounded-md p-4 mb-4;
   }
-  
+
   .alert-success {
     @apply bg-green-50 text-green-800;
   }
-  
+
   .alert-error {
     @apply bg-red-50 text-red-800;
   }
-  
+
   .alert-warning {
     @apply bg-yellow-50 text-yellow-800;
   }
-  
+
   .alert-info {
     @apply bg-blue-50 text-blue-800;
   }
