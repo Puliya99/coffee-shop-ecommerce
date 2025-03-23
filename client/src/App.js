@@ -19,6 +19,7 @@ import OrdersManagementPage from './pages/OrdersManagementPage'
 
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
+import './styles/global.css'
 
 function App() {
   return (
