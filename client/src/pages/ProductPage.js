@@ -23,7 +23,6 @@ const ProductPage = () => {
         setLoading(false)
       }
     }
-
     fetchProduct()
   }, [id])
 
@@ -42,93 +41,101 @@ const ProductPage = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-64">Loading...</div>
+      <div className="container py-16 text-center">
+        <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-amber-500 border-t-transparent"></div>
+        <p className="mt-2 text-gray-600">Loading...</p>
+      </div>
     )
   }
 
   if (error) {
-    return <div className="bg-red-100 text-red-700 p-4 rounded">{error}</div>
+    return <div className="container py-16 alert alert-error">{error}</div>
   }
 
   if (!product) {
     return (
-      <div className="bg-yellow-100 text-yellow-700 p-4 rounded">
-        Product not found
+      <div className="container py-16 text-center">
+        <h2 className="text-2xl font-bold text-gray-800">Product not found</h2>
       </div>
     )
   }
 
   return (
-    <div className="grid md:grid-cols-2 gap-8">
-      <div>
-        <img
-          src={product.image || '/placeholder-coffee.jpg'}
-          alt={product.name}
-          className="w-full h-auto rounded-lg shadow-md"
-        />
-      </div>
-
-      <div>
-        <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
-        <p className="text-2xl font-semibold text-amber-700 mb-4">
-          ${product.price.toFixed(2)}
-        </p>
-
-        <div className="mb-6">
-          <h3 className="text-lg font-medium mb-2">Description</h3>
-          <p className="text-gray-700">{product.description}</p>
+    <div className="container py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <img
+            src={product.image || '/images/placeholder.jpg'}
+            alt={product.name}
+            className="w-full h-auto object-cover rounded-lg shadow-md"
+            onError={(e) => {
+              e.target.src = '/images/placeholder.jpg'
+            }}
+          />
         </div>
 
-        <div className="mb-6">
-          <h3 className="text-lg font-medium mb-2">Category</h3>
-          <p className="text-gray-700">{product.category}</p>
-        </div>
-
-        <div className="mb-6">
-          <label htmlFor="quantity" className="block text-lg font-medium mb-2">
-            Quantity
-          </label>
-          <div className="flex items-center">
-            <button
-              onClick={() => quantity > 1 && setQuantity(quantity - 1)}
-              className="px-3 py-1 border rounded-l"
-            >
-              -
-            </button>
-            <input
-              type="number"
-              id="quantity"
-              min="1"
-              max={product.stock}
-              value={quantity}
-              onChange={handleQuantityChange}
-              className="py-1 px-2 w-16 text-center border-t border-b"
-            />
-            <button
-              onClick={() =>
-                quantity < product.stock && setQuantity(quantity + 1)
-              }
-              className="px-3 py-1 border rounded-r"
-            >
-              +
-            </button>
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            {product.name}
+          </h1>
+          <div className="text-2xl font-semibold text-amber-600 mb-6">
+            ${product.price.toFixed(2)}
           </div>
-          <p className="text-sm text-gray-500 mt-1">
-            {product.stock} items available
-          </p>
-        </div>
 
-        <button
-          onClick={handleAddToCart}
-          disabled={product.stock === 0}
-          className={`w-full py-3 px-4 rounded-lg font-medium ${
-            product.stock === 0
-              ? 'bg-gray-300 cursor-not-allowed'
-              : 'bg-amber-700 text-white hover:bg-amber-800'
-          }`}
-        >
-          {product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
-        </button>
+          <div className="mb-6">
+            <h2 className="text-lg font-semibold mb-2">Description</h2>
+            <p className="text-gray-600">{product.description}</p>
+          </div>
+
+          <div className="mb-6">
+            <h2 className="text-lg font-semibold mb-2">Category</h2>
+            <p className="text-gray-600">{product.category}</p>
+          </div>
+
+          <div className="mb-6">
+            <label className="block text-lg font-semibold mb-2">Quantity</label>
+            <div className="flex items-center">
+              <button
+                onClick={() => quantity > 1 && setQuantity(quantity - 1)}
+                className="px-3 py-1 border border-gray-300 rounded-l bg-gray-100 hover:bg-gray-200"
+                disabled={quantity <= 1}
+              >
+                -
+              </button>
+              <input
+                type="number"
+                value={quantity}
+                onChange={handleQuantityChange}
+                className="w-16 text-center border-t border-b border-gray-300 py-1"
+                min="1"
+                max={product.stock}
+              />
+              <button
+                onClick={() =>
+                  quantity < product.stock && setQuantity(quantity + 1)
+                }
+                className="px-3 py-1 border border-gray-300 rounded-r bg-gray-100 hover:bg-gray-200"
+                disabled={quantity >= product.stock}
+              >
+                +
+              </button>
+            </div>
+
+            <p className="text-sm text-gray-500 mt-2">
+              {product.stock} items available
+            </p>
+          </div>
+
+          <button
+            onClick={handleAddToCart}
+            disabled={product.stock === 0}
+            className={`btn w-full py-3 text-base ${
+              product.stock === 0 ? 'opacity-50 cursor-not-allowed' : ''
+            }`}
+          >
+            {product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
+          </button>
+        </div>
       </div>
     </div>
   )
